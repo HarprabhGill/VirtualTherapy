@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
+    <script src="https://cdn.rawgit.com/delapuente/aframe-sharedspace-component/master/dist/aframe-sharedspace-component.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+  </head>
+  <body>
+    
+    <a-scene environment="groundTexture:  walkernoise;  groundColor:  #2e3914;  groundColor2:  #191e0b; dressing: trees; dressingAmount: 100; dressingColor: #2f3914; dressingScale: 2" inspector="" keyboard-shortcuts="" screenshot="" vr-mode-ui="" device-orientation-permission-ui="" fog="color: #8e9191; far: 92; density: 0" visible="">
+      <a-assets>
+        <a-asset-item id="bench" src="https://cdn.glitch.global/1056a948-5198-4091-a7c2-1355a515fd47/bench.glb?v=1668128764366"></a-asset-item>
+        <a-asset-item id="logs" src="https://cdn.glitch.global/1056a948-5198-4091-a7c2-1355a515fd47/logs.glb?v=1668148093867"></a-asset-item>
+        <a-asset-item id="logCabin" src="https://cdn.glitch.global/1056a948-5198-4091-a7c2-1355a515fd47/log_cabin.glb?v=1668149137969"></a-asset-item>
+        <a-asset-item id="log" src="https://cdn.glitch.global/1056a948-5198-4091-a7c2-1355a515fd47/log.glb?v=1668151112796"></a-asset-item>
+        <a-asset-item id="well" src="https://cdn.glitch.global/1056a948-5198-4091-a7c2-1355a515fd47/well.glb?v=1668193570600"></a-asset-item>
+        <a-asset-item id="campfire" src="https://cdn.glitch.global/1056a948-5198-4091-a7c2-1355a515fd47/campfire.glb?v=1668195207723"></a-asset-item>
+        <a-asset-item id="picnic" src="https://cdn.glitch.global/1056a948-5198-4091-a7c2-1355a515fd47/picnic.glb?v=1668196166436"></a-asset-item>
+        <a-asset-item id="rv" src="https://cdn.glitch.global/1056a948-5198-4091-a7c2-1355a515fd47/rv.glb?v=1668196753515"></a-asset-item>
+        <a-asset-item id="trailer" src="https://cdn.glitch.global/1056a948-5198-4091-a7c2-1355a515fd47/trailer.glb?v=1668453338021"></a-asset-item>
+        <a-asset-item id="deer" src="https://cdn.glitch.global/1056a948-5198-4091-a7c2-1355a515fd47/deer.glb?v=1668453925092"></a-asset-item>
+        <a-asset-item id="tent" src="https://cdn.glitch.global/1056a948-5198-4091-a7c2-1355a515fd47/tent.glb?v=1668456819771"></a-asset-item>
+        <a-asset-item id="dog" src="https://cdn.glitch.global/1056a948-5198-4091-a7c2-1355a515fd47/dog.glb?v=1668573907403"></a-asset-item>
+        <img id="sky" src="https://cdn.glitch.global/1056a948-5198-4091-a7c2-1355a515fd47/sky.jpg?v=1668114749411">
+      </a-assets>
+      
+      <a-entity sharedspace="hold: true; audio: true" avatars>
+        <div class="a-loader-title" style="display: none;"></div>
+        <a-entity class="environment" position="0 50 0" light="type: hemisphere; color: #CEE4F0; intensity: 0.572; groundColor: #454545" visible=""></a-entity>
+        <a-entity class="environment" position="-0.11 1 0.33" light="intensity: 0.5722448147213711; shadowCameraLeft: -10; shadowCameraBottom: -10; shadowCameraRight: 10; shadowCameraTop: 10" visible=""></a-entity>
+        <a-entity rotation="-90 0 0" class="environmentGround environment" visible="" scale="1 1 3" shadow="cast: false; receive: false"></a-entity>
+        <a-entity class="environmentDressing environment" visible=""></a-entity>
+        <a-sky radius="200" theta-length="110" class="environment" material="shader: skyshader; sunPosition: -0.10389385923870163 0.9444896294427422 0.31168157771610494" visible="" geometry=""></a-sky>
+
+        <a-entity gltf-model="#bench" rotation="-180 88.472 -180"></a-entity>
+        <a-entity gltf-model="#dog" animation-mixer="clip: Action; loop: repeat" scale="2.5 2.5 2.5" position="0 0 -2"></a-entity>
+        <a-entity gltf-model="#tent" scale="3 3 3" position="7.861 1.78374 6.2399" rotation="0 123.66892937442228 0"></a-entity>
+        <a-entity gltf-model="#deer" animation-mixer="clip: AnimalArmature|AnimalArmature|Eating" position="-11.991 -0.004 1.56816" rotation="0 25.462 0"></a-entity>
+        <a-entity gltf-model="#deer" animation-mixer="clip:AnimalArmature|AnimalArmature|Eating" position="-11.991 -0.004 3.7251" rotation="0 25.462 0"></a-entity>
+        <a-entity gltf-model="#deer" animation-mixer="clip:AnimalArmature|AnimalArmature|Eating" position="-11.991 -0.004 5.9907" rotation="0 85.019 0"></a-entity>
+        <a-entity gltf-model="#deer" animation-mixer="clip:AnimalArmature|AnimalArmature|Eating" position="-11.991 -0.004 8.58349" rotation="0 172.38800000000003 0"></a-entity>
+        <a-entity gltf-model="#trailer" position="-3.991 0.00691 14.10114" rotation="0 -88.904 0"></a-entity>
+        <a-entity gltf-model="#rv" scale="6 6 6" position="7.84 2.008 -3.93627" rotation="0 32.073 0"></a-entity>
+        <a-entity gltf-model="#picnic" scale="0.01 0.01 0.01" position="3.581 0.04134 3.12304"></a-entity>
+        <a-entity gltf-model="#campfire" scale="0.008 0.008 0.008" position="1.105 0 6.560" rotation="0.000 2.004 0.000"></a-entity>
+        <a-entity gltf-model="#well" scale="0.003 0.003 0.003" position="-3.503 0 5.84267" rotation="0.000 57.601 0.000"></a-entity>
+        <a-entity gltf-model="#logCabin" scale="0.01 0.01 0.01" position="-9.311 0.088 -4.774" rotation="0.000 -23.948 0.000"></a-entity>
+        <a-entity gltf-model="#logs" scale="0.01 0.01 0.01" position="-3.933 0.070 -6.649" rotation="180.000 -10.504 180.000"></a-entity>
+        <a-entity gltf-model="#log" scale="0.005 0.005 0.005" position="-7.124 0.21143 0.72061" rotation="0.000 34.755 0.000"></a-entity>
+        <a-entity gltf-model="#log" scale="0.005 0.005 0.005" position="-7.124 0.21143 -0.49166" rotation="0 34.755 0"></a-entity>
+        <a-entity gltf-model="#log" scale="0.005 0.005 0.005" position="-4.58424 0.21143 2.79376" rotation="0 34.755 0"></a-entity>
+        <a-entity gltf-model="#log" scale="0.005 0.005 0.005" position="-6.17007 0.21143 4.28295" rotation="0 34.755 0"></a-entity>
+      </a-entity>
+    </a-scene>
+    
+    <template>
+      <a-entity>
+        <a-sphere radius="0.1" color="#ffffff"></a-sphere>
+        <a-sphere position="0.05 0.03 -0.08" radius="0.02" segments-width="8" segments-height="8" color="#000000"></a-sphere>
+        <a-sphere position="-0.05 0.03 -0.08" radius="0.02" segments-width="8" segments-height="8" color="#000000"></a-sphere>
+        <a-sphere class="themable" position="0 -0.07 -0.1" scale="1 1 0.5" segments-width="4" segments-height="4" radius="0.02" color="#11fd3e"></a-sphere>
+        <a-cone class="themable" position="0.03 -0.07 -0.1" rotation="0 0 90" scale="1 1 0.5" segments-radial="8" segments-height="1" height="0.03" radius-bottom="0.03"  color="#1cff3c"></a-cone>
+        <a-cone class="themable" position="-0.03 -0.07 -0.1" rotation="0 0 -90" scale="1 1 0.5" segments-radial="8" segments-height="1" height="0.03" radius-bottom="0.03"  color="#1cff3c"></a-cone>
+      </a-entity>
+    </template>
+    
+    <script>   
+    var scene = document.querySelector('a-scene');
+      
+    (function start() {
+      if (!scene.hasLoaded) {
+        scene.addEventListener('loaded', start);
+        return;
+      }
+      var prefix = window.location.host.split('.')[0] + '-';
+      var currentUrl = new URL(window.location);
+      var roomName = currentUrl.search.substr(1);
+
+      if (!roomName) {
+        roomName = prefix + Date.now();
+        currentUrl.search = roomName;
+        history.pushState({}, '', currentUrl.href);
+      }
+      var room = document.querySelector('[sharedspace]');
+      room.addEventListener('avataradded', function onAdded(evt) {
+  
+        var avatar = evt.detail.avatar;
+        if (!avatar.hasLoaded) {
+          avatar.addEventListener('loaded', onAdded.bind(null, evt));
+          return;
+        }
+
+        var avatarY = avatar.getAttribute('position').y;  
+        avatar.object3D.lookAt(new THREE.Vector3(0, avatarY, 0));
+
+        var radToDeg = THREE.Math.radToDeg;
+        var rotation = avatar.object3D.rotation;
+        rotation.y += Math.PI;
+
+        avatar.setAttribute('rotation', {
+          x: radToDeg(rotation.x),
+          y: radToDeg(rotation.y),
+          z: radToDeg(rotation.z)
+        });
+      });
+      room.setAttribute('sharedspace', { room: roomName, hold: false });
+    }());
+    </script>
+    
+  </body>
+</html>
